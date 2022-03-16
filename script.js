@@ -121,7 +121,7 @@ const f1Yesterday = ([date, month, year]) => {
 
 f1btnTomorrow.addEventListener('click', () => {
     const inputArr = gatherData(f1Form)
-    if (inputArr.some(el => el < 0) && inputArr[0] > 31 && inputArr[1] > 12) {
+    if (inputArr.some(el => el < 0) || inputArr[0] > 31 || inputArr[1] > 12) {
         alert('Bài 1 - Nâng cao chỉ nhận số nguyên dương, ngày nhỏ hơn hoặc bằng 30, tháng nhỏ hơn hoặc bằng 12!')
         return
     }
@@ -131,7 +131,7 @@ f1btnTomorrow.addEventListener('click', () => {
 
 f1btnYesterday.addEventListener('click', () => {
     const inputArr = gatherData(f1Form)
-    if (inputArr.some(el => el < 0) && inputArr[0] > 31 && inputArr[1] > 12) {
+    if (inputArr.some(el => el < 0) || inputArr[0] > 31 || inputArr[1] > 12) {
         alert('Bài 1 - Nâng cao chỉ nhận số nguyên dương, ngày nhỏ hơn hoặc bằng 30, tháng nhỏ hơn hoặc bằng 12!')
         return
     }
@@ -151,7 +151,7 @@ const f2DayinMonth = ([month, year]) => new Date(year, month, 0).getDate()
 
 f2btnDays.addEventListener('click', () => {
     const inputArr = gatherData(f2Form)
-    if (inputArr.some(el => el < 0) && inputArr[0] > 12) {
+    if (inputArr.some(el => el < 0) || inputArr[0] > 12) {
         alert('Bài 2 - Nâng cao chỉ nhận số nguyên dương, tháng nhỏ hơn hoặc bằng 12!')
         return
     }
