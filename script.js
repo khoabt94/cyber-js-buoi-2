@@ -4,7 +4,14 @@
 // HELPER FUNCTION
 const gatherData = (form) => {
     const formData = [...form.querySelectorAll('.input')].map(el => +el.value)
-    if (!formData.every(el => Number.isInteger(el))) alert('Vui Lòng Nhập Số Nguyên!')
+    if (formData.some(el => el === 0)) {
+        alert('Vui Lòng Nhập Đầy Đủ Số Liệu!')
+        return
+    }
+    if (!formData.some(el => Number.isInteger(el))) {
+        alert('Vui Lòng Nhập Số Nguyên!')
+        return
+    }
     return formData
 }
 
